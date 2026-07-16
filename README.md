@@ -3,7 +3,7 @@
 A structured, 30‑day, project‑based deep dive into Generative AI Engineering.  
 Each day includes a working Python script, a practical concept, and a commit to track real progress.
 
-> **Current Status:** Days 1–8 complete (Foundations → RAG → Agentic Workflows).
+> **Current Status:** Days 1–9 complete (Foundations → RAG → Agentic Workflows → Persistent Memory).
 
 ---
 
@@ -18,7 +18,8 @@ Each day includes a working Python script, a practical concept, and a commit to 
 | 05 | Vector Databases (FAISS) | Persistent FAISS index with save/load & fast similarity search. |
 | 06 | RAG Pipeline | Combined FAISS retrieval + Groq generation to answer questions grounded in documents. |
 | 07 | RAG Evaluation | Manual evaluation using Groq as a judge (faithfulness & relevancy scoring). |
-| 08 | **LangGraph Agent** | State machine agent with tool calling, conversation memory, and dynamic routing. |
+| 08 | LangGraph Agent | State machine agent with tool calling, conversation memory, and dynamic routing. |
+| 09 | **Persistent Memory (Checkpoints)** | LangGraph agent with SQLite checkpoints, supporting multiple conversation threads and memory across restarts. |
 
 ---
 
@@ -29,6 +30,7 @@ Each day includes a working Python script, a practical concept, and a commit to 
 | **LLMs & APIs** | Groq (LLaMA 3.3), OpenAI (optional) |
 | **Embeddings & Retrieval** | Sentence-Transformers, FAISS, scikit-learn |
 | **Agent Frameworks** | LangGraph, LangChain Tools |
+| **Persistence** | SQLite (checkpoints), Pickle (metadata) |
 | **Evaluation** | Manual prompt‑based scoring (Groq as judge) |
 | **Package Management** | Poetry |
 | **Version Control** | Git & GitHub |
@@ -45,13 +47,11 @@ cd genai-learning-journey
 # Install dependencies (using Poetry)
 poetry install
 
-# Run the latest agent (Day 8)
-poetry run python day-08-langgraph/agent_graph.py
+# Run the latest agent with persistent memory (Day 9)
+poetry run python day-09-checkpoints/agent_with_memory.py
 Note: Set up your API keys (e.g., GROQ_API_KEY) in a .env file at the root.
 
 🗓️ Roadmap (Next Steps)
-Day 9: Persistent Memory with LangGraph Checkpoints
-
 Day 10: Human‑in‑the‑Loop (breakpoints & approval)
 
 Day 11: Multi‑Tool & Multi‑Agent Orchestration
@@ -64,3 +64,4 @@ Days 21–30: Specialised Capstone (Financial Co‑Pilot)
 
 📝 License
 MIT – feel free to use this to kick‑start your own GenAI journey!
+EOF
