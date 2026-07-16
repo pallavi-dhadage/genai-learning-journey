@@ -3,7 +3,7 @@
 A structured, 30‑day, project‑based deep dive into Generative AI Engineering.  
 Each day includes a working Python script, a practical concept, and a commit to track real progress.
 
-> **Current Status:** Days 1–9 complete (Foundations → RAG → Agentic Workflows → Persistent Memory).
+> **Current Status:** Days 1–10 complete (Foundations → RAG → Agents → Memory → Human Approval).
 
 ---
 
@@ -19,7 +19,8 @@ Each day includes a working Python script, a practical concept, and a commit to 
 | 06 | RAG Pipeline | Combined FAISS retrieval + Groq generation to answer questions grounded in documents. |
 | 07 | RAG Evaluation | Manual evaluation using Groq as a judge (faithfulness & relevancy scoring). |
 | 08 | LangGraph Agent | State machine agent with tool calling, conversation memory, and dynamic routing. |
-| 09 | **Persistent Memory (Checkpoints)** | LangGraph agent with SQLite checkpoints, supporting multiple conversation threads and memory across restarts. |
+| 09 | Persistent Memory (Checkpoints) | LangGraph agent with SQLite checkpoints, supporting multiple conversation threads and memory across restarts. |
+| 10 | **Human‑in‑the‑Loop** | Agent that pauses and asks for human approval before executing sensitive actions (e.g., stock trades). |
 
 ---
 
@@ -32,6 +33,7 @@ Each day includes a working Python script, a practical concept, and a commit to 
 | **Agent Frameworks** | LangGraph, LangChain Tools |
 | **Persistence** | SQLite (checkpoints), Pickle (metadata) |
 | **Evaluation** | Manual prompt‑based scoring (Groq as judge) |
+| **Human‑in‑the‑Loop** | Direct `input()` approval before tool execution |
 | **Package Management** | Poetry |
 | **Version Control** | Git & GitHub |
 
@@ -47,14 +49,12 @@ cd genai-learning-journey
 # Install dependencies (using Poetry)
 poetry install
 
-# Run the latest agent with persistent memory (Day 9)
-poetry run python day-09-checkpoints/agent_with_memory.py
+# Run the latest agent with Human‑in‑the‑Loop (Day 10)
+poetry run python day-10-human-in-loop/agent_with_approval.py
 Note: Set up your API keys (e.g., GROQ_API_KEY) in a .env file at the root.
 
 🗓️ Roadmap (Next Steps)
-Day 10: Human‑in‑the‑Loop (breakpoints & approval)
-
-Day 11: Multi‑Tool & Multi‑Agent Orchestration
+Day 11: Multi‑Agent Orchestration (Researcher + Trader + Calculator)
 
 Day 12: Observability with LangSmith
 
