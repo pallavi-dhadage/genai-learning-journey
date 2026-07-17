@@ -3,7 +3,7 @@
 A structured, 30‑day, project‑based deep dive into Generative AI Engineering.  
 Each day includes a working Python script, a practical concept, and a commit to track real progress.
 
-> **Current Status:** Days 1–10 complete (Foundations → RAG → Agents → Memory → Human Approval).
+> **Current Status:** Days 1–11 complete (Foundations → RAG → Agents → Memory → Human Approval → Multi‑Agent Orchestration).
 
 ---
 
@@ -20,7 +20,8 @@ Each day includes a working Python script, a practical concept, and a commit to 
 | 07 | RAG Evaluation | Manual evaluation using Groq as a judge (faithfulness & relevancy scoring). |
 | 08 | LangGraph Agent | State machine agent with tool calling, conversation memory, and dynamic routing. |
 | 09 | Persistent Memory (Checkpoints) | LangGraph agent with SQLite checkpoints, supporting multiple conversation threads and memory across restarts. |
-| 10 | **Human‑in‑the‑Loop** | Agent that pauses and asks for human approval before executing sensitive actions (e.g., stock trades). |
+| 10 | Human‑in‑the‑Loop | Agent that pauses and asks for human approval before executing sensitive actions (e.g., stock trades). |
+| 11 | **Multi‑Agent Orchestration** | Supervisor pattern with specialised agents: Researcher 📊, Analyst 🧮, and Trader 💰. Includes retry logic for API rate limits. |
 
 ---
 
@@ -34,6 +35,8 @@ Each day includes a working Python script, a practical concept, and a commit to 
 | **Persistence** | SQLite (checkpoints), Pickle (metadata) |
 | **Evaluation** | Manual prompt‑based scoring (Groq as judge) |
 | **Human‑in‑the‑Loop** | Direct `input()` approval before tool execution |
+| **Orchestration** | Supervisor pattern with specialised agents |
+| **Resilience** | Tenacity retry with exponential backoff |
 | **Package Management** | Poetry |
 | **Version Control** | Git & GitHub |
 
@@ -49,18 +52,20 @@ cd genai-learning-journey
 # Install dependencies (using Poetry)
 poetry install
 
-# Run the latest agent with Human‑in‑the‑Loop (Day 10)
-poetry run python day-10-human-in-loop/agent_with_approval.py
+# Run the latest multi‑agent supervisor (Day 11)
+poetry run python day-11-multi-agent/supervisor_agent.py
 Note: Set up your API keys (e.g., GROQ_API_KEY) in a .env file at the root.
 
 🗓️ Roadmap (Next Steps)
-Day 11: Multi‑Agent Orchestration (Researcher + Trader + Calculator)
-
 Day 12: Observability with LangSmith
 
-Days 13–20: Production Optimisation (caching, re‑ranking, cost routing)
+Day 13: Production Optimisation (caching, re‑ranking)
 
-Days 21–30: Specialised Capstone (Financial Co‑Pilot)
+Day 14: Cost‑Aware Routing
+
+Day 15–20: Advanced RAG & Fine‑tuning
+
+Day 21–30: Capstone: Financial Co‑Pilot
 
 📝 License
 MIT – feel free to use this to kick‑start your own GenAI journey!
